@@ -75,8 +75,8 @@ jobs:
           name: js-ts-linted
     
       - uses: actions/download-artifact@v2
-          with:
-            name: csslinted
+        with:
+          name: csslinted
 
       - name: Display structure of downloaded files
         run: ls -R
