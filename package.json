@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "stylelint": "npx stylelint **/*.css --fix",
+    "eslint": "npx eslint . --ext .js,.ts--fix",
+    "html-validate": "npx html-validate ."
+  },
   "dependencies": {
     "axios": "^0.24.0"
   },
