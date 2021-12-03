@@ -8,25 +8,6 @@ on:
       - 'push-action/**'
       
 jobs:
-  stylelint:
-    name: Lint css
-    runs-on: ubuntu-latest
-    steps:
-      - name: check out code 🛎
-        uses: actions/checkout@v2
-        
-      - name: npm ci
-        run: npm ci
-    
-      - name: Run Stylelint css
-        run: npm run stylelint
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: csslinted
-          path: | 
-            ./**/*.css
-            !node_modules/
 
   eslint:
       name: ESlint
@@ -43,10 +24,9 @@ jobs:
           
         - uses: actions/upload-artifact@v2
           with:
-            name: js-ts-linted
+            name: js-linted
             path: | 
               ./**/*.js
-              ./**/*.ts
               !node_modules/
               
   html-validate:
@@ -65,18 +45,14 @@ jobs:
   push:
     name: Push changes
     runs-on: ubuntu-latest
-    needs: [stylelint, eslint, html-validate]
+    needs: [eslint, html-validate]
     steps:
       - name: check out code 🛎
         uses: actions/checkout@v2
           
       - uses: actions/download-artifact@v2
         with:
-          name: js-ts-linted
-    
-      - uses: actions/download-artifact@v2
-        with:
-          name: csslinted
+          name: js-linted
 
       - name: Display structure of downloaded files
         run: ls -R
