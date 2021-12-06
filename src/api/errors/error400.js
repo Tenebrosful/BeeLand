@@ -1,7 +1,7 @@
 import express from 'express';
 
 /**
- * Error 400
+ * Error 400 "Bad Request"
  * @param {express.Request} req 
  * @param {express.Response} res 
  */

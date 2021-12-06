@@ -1,7 +1,7 @@
 import express from 'express';
 
 /**
- * Error 500
+ * Error 500 "Internal Server Error"
  * @param {Error} err
  * @param {express.Request} req 
  * @param {express.Response} res 
