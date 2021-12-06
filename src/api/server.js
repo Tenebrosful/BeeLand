@@ -20,6 +20,10 @@ app.use(logger);
 /**
  * Routes
  */
+import plant from "./routes/plant.js";
+
+app.use('/plant', plant);
+
 /**
  * Handle errors
  */
