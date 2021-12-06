@@ -1,13 +1,28 @@
 import express from "express";
 import * as dotenv from "dotenv";
 
+/**
+ * Setup
+ */
+
 dotenv.config();
 
 const app = express();
 
+/**
+ * Middlewares
+ */
+
 import logger from "./middleware/logger.js";
 
 app.use(logger);
+
+/**
+ * Routes
+ */
+/**
+ * Handle errors
+ */
 
 import error400 from "./errors/error400.js";
 import error500 from "./errors/error500.js";
