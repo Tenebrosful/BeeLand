@@ -1,7 +1,9 @@
 {
   "scripts": {
     "eslint": "npx eslint . --fix",
-    "html-validate": "npx html-validate ."
+    "html-validate": "npx html-validate .",
+    "startApi": "node ./src/api/server.js",
+    "devApi": "nodemon ./src/api/server.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
