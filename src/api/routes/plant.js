@@ -3,10 +3,38 @@ import error501 from "../errors/error501.js";
 const plant = express.Router();
 
 /**
+ * OPTIONS for /
+ */
+plant.options("/", 
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+(req, res) => {
+  res.header('Access-Control-Allow-Methods', 'GET');
+  res.send(200);
+})
+
+/**
  * @TODO
  * Return all plants
  */
 plant.get("/", error501);
+
+/**
+ * OPTIONS for /:id
+ */
+ plant.options("/:id", 
+ /**
+  * 
+  * @param {express.Request} req 
+  * @param {express.Response} res 
+  */
+ (req, res) => {
+   res.header('Access-Control-Allow-Methods', 'GET, DELETE, PUT, PATCH');
+   res.send(200);
+ })
 
 /**
  * @TODO
