@@ -4,11 +4,14 @@
     "html-validate": "npx html-validate ."
   },
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.24.0",
+    "vue": "^3.2.26"
   },
   "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.26",
     "eslint": "^8.3.0",
     "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-vue": "^8.3.0",
     "html-validate": "^6.1.3"
   },
   "type": "module"

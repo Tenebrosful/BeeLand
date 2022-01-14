@@ -10,7 +10,8 @@
       "sourceType": "module"
     },
     "extends": [
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:vue/vue3-essential"
     ],
     "rules": {
 
@@ -27,5 +28,10 @@
     "no-unused-vars": "off", // typescript-eslint suggestion: off
     "curly": ["error", "multi"],
     "eqeqeq": "error"
-    }
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead"
+    ]
   }
