@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "eslint": "npx eslint . --fix",
+    "eslint": "npx eslint . --ext .js,.vue --fix",
     "html-validate": "npx html-validate ."
   },
   "dependencies": {
