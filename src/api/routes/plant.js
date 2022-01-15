@@ -1,5 +1,6 @@
 import express from "express";
 import { getBDD } from "../../database/database.js";
+import { Plant } from "../../database/models/Plant.js";
 import error501 from "../errors/error501.js";
 const plant = express.Router();
 
@@ -8,22 +9,30 @@ const bdd = getBDD();
 /**
  * OPTIONS for /
  */
-plant.options("/", 
-/**
- * 
- * @param {express.Request} req 
- * @param {express.Response} res 
- */
-(req, res) => {
-  res.header('Access-Control-Allow-Methods', 'GET');
-  res.send(200);
-})
+plant.options("/",
+  /**
+   * 
+   * @param {express.Request} req 
+   * @param {express.Response} res 
+   */
+  (req, res) => {
+    res.header('Access-Control-Allow-Methods', 'GET');
+    res.send(200);
+  })
 
 /**
  * @TODO
  * Return all plants
  */
-plant.get("/", error501);
+plant.get("/", async (req, res, next) => {
+  try {
+    const allPlants = await Plant.findAll();
+    res.status(200).json(allPlants);
+  } catch (error) {
+    next(error);
+  }
+
+});
 
 /**
  * OPTIONS for /:id
