@@ -1,6 +1,9 @@
 import express from "express";
+import { getBDD } from "../../database/database.js";
 import error501 from "../errors/error501.js";
 const plant = express.Router();
+
+const bdd = getBDD();
 
 /**
  * OPTIONS for /
