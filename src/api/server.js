@@ -1,11 +1,14 @@
 import express from "express";
 import * as dotenv from "dotenv";
+import { initBDD } from "../database/database.js";
 
 /**
  * Setup
  */
 
 dotenv.config();
+
+initBDD();
 
 const app = express();
 
