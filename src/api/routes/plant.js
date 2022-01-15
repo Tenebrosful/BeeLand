@@ -37,22 +37,39 @@ plant.get("/", async (req, res, next) => {
 /**
  * OPTIONS for /:id
  */
- plant.options("/:id", 
- /**
-  * 
-  * @param {express.Request} req 
-  * @param {express.Response} res 
-  */
- (req, res) => {
-   res.header('Access-Control-Allow-Methods', 'GET, DELETE, PUT, PATCH');
-   res.send(200);
- })
+plant.options("/:id",
+  /**
+   * 
+   * @param {express.Request} req 
+   * @param {express.Response} res 
+   */
+  (req, res) => {
+    res.header('Access-Control-Allow-Methods', 'GET, DELETE, PUT, PATCH');
+    res.send(200);
+  })
 
 /**
  * @TODO
  * Return a specific plant with her ID
  */
-plant.get("/:id", error501);
+plant.get("/:id", async (req, res, next) => {
+  try {
+    const plantid = await Plant.findOne({ where: { id: req.params.id } });
+
+    if (!plantid) {
+      res.status(404).json({
+        code: 404,
+        message: `Not plant found with id ${req.params.id}`
+      });
+      return;
+    }
+
+    res.status(200).json(plantid);
+
+  } catch (error) {
+    next(error);
+  }
+});
 
 /**
  * @TODO
