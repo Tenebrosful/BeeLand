@@ -12,4 +12,6 @@ export const Admin = sequelize.define("admins", {
     unique: true
   },
   password: DataTypes.STRING
+}, {
+  timestamps: false
 })
