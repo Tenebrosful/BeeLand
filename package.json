@@ -4,7 +4,8 @@
     "html-validate": "npx html-validate ."
   },
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.24.0",
+    "mysql2": "^2.3.3"
   },
   "devDependencies": {
     "eslint": "^8.3.0",
