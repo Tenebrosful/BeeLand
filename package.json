@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
   },
   "devDependencies": {
     "eslint": "^8.3.0",
