@@ -1,5 +1,6 @@
 import { DataTypes, Sequelize } from "sequelize"
-const sequelize = new Sequelize('mysql')
+import { getBDD } from "../database.js"
+const sequelize = getBDD()
 
 export const Admin = sequelize.define("admins", {
   id: {
