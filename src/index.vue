@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <div class="w-100 d-flex align-items-center justify-content-center">
-      <h1>BeeLand</h1>
-    </div>
-    <Map />
+  <div id="app">
+    <Map/>
   </div>
 </template>
 
 <script>
-import Map from "./components/Map.vue";
+import Map from "./components/Map";
 
 export default {
   components: {
-    Map,
-  },
+    Map
+  }
 };
 </script>
