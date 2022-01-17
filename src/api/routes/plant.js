@@ -72,7 +72,23 @@ plant.get("/:id", async (req, res, next) => {
 /**
  * Delete a specific plant with her ID
  */
-plant.delete("/:id", error501);
+plant.delete("/:id", async (req, res, next) => {
+  try {
+    const nbDeleteRow = await Plant.destroy({ where: { id: req.params.id } });
+
+    if (nbDeleteRow < 1) {
+      res.status(404).json({
+        code: 404,
+        message: `Not plant found with id ${req.params.id}`
+      });
+      return;
+    }
+
+    res.status(200).send();
+  } catch (error) {
+    next(error);
+  }
+});
 
 /**
  * @TODO
