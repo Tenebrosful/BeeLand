@@ -125,6 +125,15 @@ plant.put("/:id", async (req, res, next) => {
       res.status(204).send()
 
   } catch (error) {
+    // @ts-ignore
+    if (error instanceof DatabaseError && error.original.code === "ER_NO_DEFAULT_FOR_FIELD") {
+      res.status(422).json({
+        code: 422,
+        message: `Plant with id ${req.params.id} doesn't exist and required fields are missing in the request body${process.env.NODE_ENV === "dev" ? " [[[[ " + error.original.text + " ]]]]": ""}`
+      });
+      return;
+    }
+
     next(error);
   }
 });
