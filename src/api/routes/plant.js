@@ -21,7 +21,6 @@ plant.options("/",
   })
 
 /**
- * @TODO
  * Return all plants
  */
 plant.get("/", async (req, res, next) => {
@@ -49,7 +48,6 @@ plant.options("/:id",
   })
 
 /**
- * @TODO
  * Return a specific plant with her ID
  */
 plant.get("/:id", async (req, res, next) => {
@@ -72,7 +70,6 @@ plant.get("/:id", async (req, res, next) => {
 });
 
 /**
- * @TODO
  * Delete a specific plant with her ID
  */
 plant.delete("/:id", error501);
