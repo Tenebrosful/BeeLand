@@ -1,4 +1,5 @@
 import express from "express";
+import { DatabaseError } from "sequelize";
 import { getBDD } from "../../database/database.js";
 import { Plant } from "../../database/models/Plant.js";
 import error501 from "../errors/error501.js";
@@ -16,7 +17,7 @@ plant.options("/",
    * @param {express.Response} res 
    */
   (req, res) => {
-    res.header('Access-Control-Allow-Methods', 'GET');
+    res.header('Access-Control-Allow-Methods', 'GET, POST');
     res.send(200);
   })
 
@@ -31,6 +32,27 @@ plant.get("/", async (req, res, next) => {
     next(error);
   }
 
+});
+
+/**
+ * Add a new plant
+ */
+plant.post("/", async (req, res, next) => {
+  try {
+    const newPlant = await Plant.create({ ...req.body });
+    res.status(201).json(newPlant.toJSON());
+  } catch (error) {
+    // @ts-ignore
+    if (error instanceof DatabaseError && error.original.code === "ER_NO_DEFAULT_FOR_FIELD") {
+      res.status(422).json({
+        code: 422,
+        message: `Required fields are missing in the request body${process.env.NODE_ENV === "dev" ? " [[[[ " + error.original.text + " ]]]]": ""}`
+      });
+      return;
+    }
+
+    next(error);
+  }
 });
 
 /**

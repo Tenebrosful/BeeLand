@@ -7,6 +7,10 @@
 
 Return all plants
 
+### `POST`
+
+Create a new plant
+
 ## `/plant/:id`
 
 ### `GET`
