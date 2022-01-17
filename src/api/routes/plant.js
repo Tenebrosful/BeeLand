@@ -108,9 +108,27 @@ plant.put("/:id", async (req, res, next) => {
 });
 
 /**
- * @TODO
  * Partial update a specific plant with her ID
  */
-plant.patch("/:id", error501);
+plant.patch("/:id", async (req, res, next) => {
+  try {
+    const nbUpdatedPlants = await Plant.update({ ...req.body }, { where: { id: req.params.id } });
+
+    console.log(nbUpdatedPlants);
+
+    if (nbUpdatedPlants[0] < 1) {
+      res.status(404).json({
+        code: 404,
+        message: `Not plant found with id ${req.params.id}`
+      });
+      return;
+    }
+
+    res.status(204).send();
+
+  } catch (error) {
+    next(error);
+  }
+});
 
 export default plant;
