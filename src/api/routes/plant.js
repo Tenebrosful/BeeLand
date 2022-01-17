@@ -98,11 +98,10 @@ plant.put("/:id", async (req, res, next) => {
     const newOrUpdatedPlant = await Plant.upsert({ id: req.params.id, ...req.body });
 
     if (newOrUpdatedPlant[1])
-      res.status(201)
+      res.status(201).json(newOrUpdatedPlant[0].toJSON())
     else
-      res.status(200)
+      res.status(204).send()
 
-    res.json(newOrUpdatedPlant[0].toJSON());
   } catch (error) {
     next(error);
   }
