@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import { initBDD } from "../database/database.js";
 
@@ -19,6 +20,9 @@ const app = express();
 import logger from "./middleware/logger.js";
 
 app.use(logger);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 /**
  * Routes
