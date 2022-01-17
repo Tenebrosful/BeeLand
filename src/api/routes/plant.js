@@ -91,10 +91,22 @@ plant.delete("/:id", async (req, res, next) => {
 });
 
 /**
- * @TODO
  * Create or update a specific plant with her ID
  */
-plant.put("/:id", error501);
+plant.put("/:id", async (req, res, next) => {
+  try {
+    const newOrUpdatedPlant = await Plant.upsert({ id: req.params.id, ...req.body });
+
+    if (newOrUpdatedPlant[1])
+      res.status(201)
+    else
+      res.status(200)
+
+    res.json(newOrUpdatedPlant[0].toJSON());
+  } catch (error) {
+    next(error);
+  }
+});
 
 /**
  * @TODO
