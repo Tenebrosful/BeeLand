@@ -13,7 +13,6 @@ dotenv.config({path: "config/bdd.env"});
 let BDDInstance;
 
 export function initBDD(){
-  console.log(process.env.BDD_DATABASE, process.env.BDD_USERNAME, process.env.BDD_PASSWORD, process.env.BDD_DRIVER, process.env.BDD_HOSTNAME);
   const instance = new Sequelize(
     process.env.BDD_DATABASE || "",
     process.env.BDD_USERNAME || "",
