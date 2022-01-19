@@ -1,5 +1,5 @@
 //import { createApp } from 'vue'
-import App from './index.vue'
+import App from './home.vue'
 
 //import axios from 'axios'
 //import VueAxios from 'vue-axios'
