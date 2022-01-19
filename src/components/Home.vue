@@ -12,7 +12,7 @@
 L'application sera sous la forme d'une carte du parc où l'on devra se placer physiquement à divers endroits à la manière afin d'aller scanner des QR code et en apprendre à propos des plantes et des abeilles.</p>
     </div>
   <footer class="d-grid gap-2">
-    <button class="btn btn-primary" type="button">Jouer</button>
+    <button class="btn btn-outline-dark" type="button">Jouer</button>
   </footer>
 </div>
 
