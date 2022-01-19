@@ -24,7 +24,7 @@ L'application sera sous la forme d'une carte du parc où l'on devra se placer ph
   }
 
   .texte{
-    font-size: 10px;
+    font-size: 70%;
     width: 75%;
     font-family: cursive;
   }
