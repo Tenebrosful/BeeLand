@@ -1,5 +1,7 @@
 //import { createApp } from 'vue'
 import App from './home.vue'
+//import App from './descPlant.vue'
+//import App from './index.vue'
 
 //import axios from 'axios'
 //import VueAxios from 'vue-axios'
