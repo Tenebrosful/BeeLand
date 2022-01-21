@@ -74,24 +74,24 @@ export default {
           lng = 6.154988;
           break;
         case "secteur arboreteum Chine":
-          lat = 48.662623;
-          lng = 6.15745;
+          lat = 48.659304;
+          lng = 6.155815;
           break;
         case "secteur terre de bruyère":
           lat = 48.659029;
           lng = 6.154923;
           break;
         case "secteur arboreteum Europe":
-          lat = 48.661729;
-          lng = 6.156998;
+          lat = 48.661593;
+          lng = 6.156888;
           break;
         case "arboretum, secteur Chine":
-          lat = 48.662623;
-          lng = 6.15745;
+          lat = 48.660268;
+          lng = 6.156330;
           break;
         case "pelouse":
-          lat = 48.659955;
-          lng = 6.156835;
+          lat = 48.660134;
+          lng = 6.157660;
           break;
         case "collection de dahlias":
           lat = 48.662033;
@@ -106,8 +106,8 @@ export default {
           lng = 6.154408;
           break;
         case "potager":
-          lat = 48.660902;
-          lng = 6.153436;
+          lat = 48.660909;
+          lng = 6.153318;
           break;
         case "potager écologique":
           lat = 48.660377;
@@ -130,8 +130,8 @@ export default {
           lng = 6.153318;
           break;
         case "parcelle Emile Gallé":
-          lat = 48.659162;
-          lng = 6.153018;
+          lat = 48.659786;
+          lng = 6.153636;
           break;
         case "arboretum":
           lat = 48.662702;

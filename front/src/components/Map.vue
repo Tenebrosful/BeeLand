@@ -11,7 +11,7 @@
       <GMapMarker
         :key="index"
         v-for="(plant, index) in plants"
-        :position="{ lat: plant.position.lat, lng: plant.position.lng }"
+        :position="{ lat: parseFloat(plant.position.lat), lng: parseFloat(plant.position.lng) }"
         :clickable="true"
         @click="openInfoWindow(plant)"
       />
