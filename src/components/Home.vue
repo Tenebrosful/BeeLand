@@ -18,7 +18,7 @@
       </small>
     </div>
     <footer class="d-grid gap-2">
-      <button class="btn btn-outline-dark" type="button">Jouer</button>
+      <router-link class="btn btn-outline-dark" to="/map">Jouer</router-link>
     </footer>
   </div>
 </template>

@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <descPlant/>
+    <DescPlant/>
   </div>
 </template>
 
 <script>
-import descPlant from "./components/descPlant";
+import DescPlant from "./components/DescPlant";
 
 export default {
   components: {
-    descPlant
+    DescPlant
   }
 };
 </script>
