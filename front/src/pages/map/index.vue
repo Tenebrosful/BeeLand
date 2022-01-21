@@ -24,6 +24,7 @@ import Score from "../../components/Score";
 export default {
   data() {
     return {
+      test:"test",
       players: [
         {pseudo: "Wecko", score:25},
         {pseudo: "Lamastico", score:5},
@@ -40,6 +41,7 @@ export default {
   mounted() {
     this.getPlants();
   },
+  data() {},
   methods: {
     async getPlants() {
       const { data } = await this.axios.get(process.env.VUE_APP_SERVER_URL);
