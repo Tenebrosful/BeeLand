@@ -84,10 +84,3 @@ export default {
 
 };
 </script>
-
-<style>
-.vue-map-container {
-  height: 95vh;
-}
-</style>
-

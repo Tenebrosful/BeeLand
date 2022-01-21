@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+small,
+strong,
+em,
+ul,
+li,
+ol,
+button,
+input,
+textarea,
+label,
+select {
+    font-family: cursive;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 0px;
+}
