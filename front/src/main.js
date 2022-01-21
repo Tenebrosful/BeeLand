@@ -31,7 +31,6 @@ const router = VueRouter.createRouter({
             path: '/plant',
             name: 'Plant',
             component: Plant
-
         }
     ]
 })
