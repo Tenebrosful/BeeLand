@@ -3,6 +3,7 @@ import { DatabaseError } from "sequelize";
 import { getBDD } from "../../database/database.js";
 import { Plant } from "../../database/models/Plant.js";
 import error501 from "../errors/error501.js";
+import mustBeAdmin from "../middleware/mustBeAdmin.js";
 const plant = express.Router();
 
 const bdd = getBDD();
@@ -21,6 +22,7 @@ plant.options("/",
     res.send(200);
   })
 
+
 /**
  * Return all plants
  */
@@ -34,6 +36,7 @@ plant.get("/", async (req, res, next) => {
 
 });
 
+plant.post("/", mustBeAdmin);
 /**
  * Add a new plant
  */
@@ -46,7 +49,7 @@ plant.post("/", async (req, res, next) => {
     if (error instanceof DatabaseError && error.original.code === "ER_NO_DEFAULT_FOR_FIELD") {
       res.status(422).json({
         code: 422,
-        message: `Required fields are missing in the request body${process.env.NODE_ENV === "dev" ? " [[[[ " + error.original.text + " ]]]]": ""}`
+        message: `Required fields are missing in the request body${process.env.NODE_ENV === "dev" ? " [[[[ " + error.original.text + " ]]]]" : ""}`
       });
       return;
     }
@@ -91,8 +94,10 @@ plant.get("/:id", async (req, res, next) => {
   }
 });
 
+plant.delete("/:id", mustBeAdmin);
 /**
  * Delete a specific plant with her ID
+ * Require to be logged
  */
 plant.delete("/:id", async (req, res, next) => {
   try {
@@ -112,8 +117,10 @@ plant.delete("/:id", async (req, res, next) => {
   }
 });
 
+plant.put("/:id", mustBeAdmin);
 /**
  * Create or update a specific plant with her ID
+ * Required to be logged
  */
 plant.put("/:id", async (req, res, next) => {
   try {
@@ -129,7 +136,7 @@ plant.put("/:id", async (req, res, next) => {
     if (error instanceof DatabaseError && error.original.code === "ER_NO_DEFAULT_FOR_FIELD") {
       res.status(422).json({
         code: 422,
-        message: `Plant with id ${req.params.id} doesn't exist and required fields are missing in the request body${process.env.NODE_ENV === "dev" ? " [[[[ " + error.original.text + " ]]]]": ""}`
+        message: `Plant with id ${req.params.id} doesn't exist and required fields are missing in the request body${process.env.NODE_ENV === "dev" ? " [[[[ " + error.original.text + " ]]]]" : ""}`
       });
       return;
     }
@@ -138,8 +145,10 @@ plant.put("/:id", async (req, res, next) => {
   }
 });
 
+plant.patch("/:id", mustBeAdmin);
 /**
  * Partial update a specific plant with her ID
+ * Require to be logged
  */
 plant.patch("/:id", async (req, res, next) => {
   try {
