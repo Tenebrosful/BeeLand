@@ -4,7 +4,7 @@ import * as VueRouter from 'vue-router'
 import App from './App.vue'
 import Home from './pages/index.vue'
 import Map from './pages/map/index.vue'
-
+import Plant from './pages/plant/index.vue'
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 import axios from 'axios'
@@ -26,6 +26,12 @@ const router = VueRouter.createRouter({
             path: '/map',
             name: 'Map',
             component: Map
+        },
+        {
+            path: '/plant',
+            name: 'Plant',
+            component: Plant
+
         }
     ]
 })
@@ -35,5 +41,5 @@ createApp(App).use(router).use(VueGoogleMaps, {
         key: 'AIzaSyCCfld0seEmoVxj0ZRr7AAT_206D96d2QU',
         libraries: "places",
         region: "uk,en"
-    },
+    }
 }).use(VueAxios, axios).mount('#app')

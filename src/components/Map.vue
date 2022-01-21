@@ -76,7 +76,7 @@ export default {
           lat: 48.660575,
           lng: 6.153999,
         },
-      ],
+      ]
     };
   },
   methods: {
@@ -93,4 +93,3 @@ export default {
   height: 95vh;
 }
 </style>
-
