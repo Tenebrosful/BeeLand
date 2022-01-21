@@ -38,5 +38,15 @@ export default {
     Map,
     Score
   },
+  mounted() {
+    this.getPlants();
+  },
+  data() {},
+  methods: {
+    async getPlants() {
+      const { data } = await this.axios.get(process.env.VUE_APP_SERVER_URL);
+      console.log(data);
+    },
+  },
 };
 </script>
