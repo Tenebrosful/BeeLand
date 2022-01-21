@@ -1,14 +1,14 @@
 <template>
   <div>
-    <gmap-map :center="center" :zoom="zoom" ref="map">
-      <gmap-marker
+    <GMapMap :center="center" :zoom="zoom" ref="map">
+      <GMapMarker
           :key="index"
           v-for="(location, index) in locations"
           :position="{ lat: location.lat, lng: location.lng }"
           :clickable="true"
           @click="openInfoWindow(location);"
       />
-      <gmap-info-window
+      <GMapInfoWindow
           v-if="selectedLocation !== null"
           :position="{ lat: selectedLocation.lat, lng: selectedLocation.lng }"
           :opened="infoBoxOpen"
@@ -20,8 +20,8 @@
           </h2>
           <p>{{ selectedLocation.infoText }}</p>
         </div>
-      </gmap-info-window>
-    </gmap-map>
+      </GMapInfoWindow>
+    </GMapMap>
   </div>
 </template>
 
