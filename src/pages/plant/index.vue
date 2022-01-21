@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Plant from "../../components/descPlant";
+import Plant from "../../components/DescPlant";
 
 export default {
   components: {
