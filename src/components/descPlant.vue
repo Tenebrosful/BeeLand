@@ -1,7 +1,8 @@
 <template>
   <div>
-    <img class="rounded mx-auto d-block" src="../assets/vanille.jpg" alt="vanille.jpg">
-    <div class="rounded mx-auto d-block text-center display-4">
+    <img class="rounded mx-auto d-block" src="../assets/vanille.jpg" alt="vanille.jpg"
+         style="max-width:100%;">
+    <div class="rounded mx-auto d-block" style="font-size:2em; padding:1%;">
       <div class="details-description">
         <strong>Nom : Orchidée</strong>
       </div>

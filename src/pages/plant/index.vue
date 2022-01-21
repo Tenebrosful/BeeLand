@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link
+    <!--<router-link
       class="fixed-top card backButton d-flex justify-content-center"
       title="Retour à l'accueil"
       to="/"
@@ -11,17 +11,17 @@
         height="40"
         width="40"
       />
-    </router-link>
-    <Map />
+    </router-link>-->
+    <Plant />
   </div>
 </template>
 
 <script>
-import Map from "../../components/Map";
+import Plant from "../../components/descPlant";
 
 export default {
   components: {
-    Map,
+    Plant,
   },
 };
 </script>
