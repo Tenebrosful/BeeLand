@@ -13,15 +13,30 @@
       />
     </router-link>
     <Map />
+    <Score></Score>
   </div>
 </template>
 
 <script>
 import Map from "../../components/Map";
+import Score from "../../components/Score";
 
 export default {
+  data() {
+    return {
+      test:"test",
+      players: [
+        {pseudo: "Wecko", score:25},
+        {pseudo: "Lamastico", score:5},
+        {pseudo: "John Macmanaman", score:12},
+        {pseudo: "Raoudy", score:18}
+      ]
+    }
+  },
+
   components: {
     Map,
+    Score
   },
 };
 </script>

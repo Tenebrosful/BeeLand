@@ -35,5 +35,5 @@ createApp(App).use(router).use(VueGoogleMaps, {
         key: 'AIzaSyCCfld0seEmoVxj0ZRr7AAT_206D96d2QU',
         libraries: "places",
         region: "uk,en"
-    },
+    }
 }).use(VueAxios, axios).mount('#app')

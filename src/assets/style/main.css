@@ -26,9 +26,10 @@ select {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
+    background-color: white;
 }
 
 .btn {
@@ -44,4 +45,20 @@ footer {
     border-radius: .5rem;
     margin-top: .25rem;
     margin-left: .25rem;
+}
+
+.texte{
+  padding: 2%;
+  font-size: auto;
+  font-family: cursive;
+}
+
+#score{
+  width: 100%;
+  position: absolute;
+  top: 12%;
+}
+
+td{
+  vertical-align: middle;
 }
