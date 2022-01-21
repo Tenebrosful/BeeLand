@@ -1,6 +1,13 @@
 <template>
   <div>
-    <GMapMap :center="center" :zoom="zoom" ref="map">
+    <GMapMap
+      :center="center"
+      :zoom="zoom"
+      :options="{
+        mapTypeControl: false,
+      }"
+      ref="map"
+    >
       <GMapMarker
         :key="index"
         v-for="(location, index) in locations"
