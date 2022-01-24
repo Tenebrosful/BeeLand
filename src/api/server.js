@@ -4,10 +4,10 @@ import * as dotenv from "dotenv";
 import { initBDD } from "../database/database.js";
 
 /**
- * Setup
+ * Setup des variables d'environnement
  */
 
-dotenv.config();
+dotenv.config({path: "config/api.env"});
 
 initBDD();
 
@@ -41,6 +41,6 @@ import error500 from "./errors/error500.js";
 app.use(error400);
 app.use(error500);
 
-app.listen(process.env.expressPort || 3000, () => {
-  console.log(`Listening at http://localhost:${process.env.expressPort || 3000}`);
+app.listen(process.env.EXPRESS_PORT || 3000, () => {
+  console.log(`Listening at http://localhost:${process.env.EXPRESS_PORT || 3000}`);
 });
