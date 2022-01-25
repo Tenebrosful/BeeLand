@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link
-      class="fixed-top card backButton d-flex justify-content-center"
+      class="card backButton d-flex justify-content-center"
       title="Retour à l'accueil"
       to="/"
     >
@@ -13,7 +13,19 @@
       />
     </router-link>
     <Map :plants="plants" />
-    <Score></Score>
+    <div
+      class="card scoreBoardButton d-flex justify-content-center cursor-pointer"
+      @click="showScoreBoard = !showScoreBoard"
+    >
+      <img
+        class="w-100"
+        src="../../assets/icons/trophy-solid.svg"
+        height="40"
+        width="40"
+      />
+    </div>
+
+    <Score v-if="showScoreBoard" :players="players" />
   </div>
 </template>
 
@@ -32,6 +44,7 @@ export default {
         { pseudo: "Raoudy", score: 18 },
       ],
       plants: [],
+      showScoreBoard: false,
     };
   },
   components: {
