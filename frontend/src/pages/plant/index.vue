@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Plant from "../../components/DescPlant";
+import Plant from "../../components/descPlant.vue";
 
 export default {
   components: {
