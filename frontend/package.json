@@ -1,9 +1,7 @@
 {
-  "name": "beeland",
-  "version": "0.1.0",
-  "private": true,
+  "name": "beeland_frontend",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -13,6 +11,7 @@
     "bootstrap": "^5.1.3",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "dotenv": "^14.3.0",
     "vue": "^3.0.0",
     "vue-axios": "^3.4.0",
     "vue-router": "4"

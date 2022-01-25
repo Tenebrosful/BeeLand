@@ -9,10 +9,13 @@ import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import * as dotenv from 'dotenv'
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 import "./assets/style/main.css"
+
+dotenv.config();
 
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(),
