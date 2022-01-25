@@ -11,7 +11,8 @@
 
 ## Configuration
 
-- [Fichiers d'environnement](./backend/config/README.md)
+- [Fichiers d'environnement pour l'API](./backend/config/README.md)
+- [Fichiers d'environnement pour l'application Vue](./frontend/config/README.md)
 
 ## Démarrage
 
