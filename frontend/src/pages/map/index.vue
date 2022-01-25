@@ -51,7 +51,6 @@ export default {
     Map,
     Score,
   },
-<<<<<<< HEAD:front/src/pages/map/index.vue
   mounted() {
     this.getPlants();
   },
@@ -192,7 +191,5 @@ export default {
       else return { lat, lng };
     },
   },
-=======
->>>>>>> parent of 97e825b (feat(app): add api):src/pages/map/index.vue
 };
 </script>
