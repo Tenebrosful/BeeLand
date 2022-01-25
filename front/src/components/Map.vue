@@ -27,14 +27,24 @@
         :opened="infoBoxOpen"
         @closeclick="infoBoxOpen = false"
       >
-        <div class="justify-content-center align-items-center">
+        <div class="justify-content-center align-items-center p-2">
           <div v-if="!showQR" class="w-100">
-            <h3 id="infoWindow-location">Nom : {{ selectedLocation.name }}</h3>
-            <p>{{ selectedLocation.infoText }}</p>
+            <h3 id="infoWindow-location">
+              Nom commun : {{ selectedLocation.french_name }}
+            </h3>
+            <h6>
+              Nom latin : <i>{{ selectedLocation.latin_name }}</i>
+            </h6>
+            <img :src="selectedLocation.photo" alt="" />
+            <h6>Hauteur : {{ selectedLocation.height }}</h6>
+            <h6>Floraison : {{ selectedLocation.flowering }}</h6>
+            <h6>Couleur : {{ selectedLocation.color }}</h6>
+            <h6>Nectar : {{ selectedLocation.nectar }}</h6>
+            <h6>Pollen : {{ selectedLocation.pollen }}</h6>
           </div>
 
           <div v-else class="w-100">
-            <img :src="qrCodeUrl + selectedLocation.name" alt="QR CODE" />
+            <img :src="qrCodeUrl + selectedLocation.photo" alt="QR CODE" />
           </div>
 
           <button
@@ -69,9 +79,16 @@ export default {
   },
   methods: {
     openInfoWindow(plant) {
+      this.showQR = false;
       this.selectedLocation = {
-        name: plant.french_name,
-        infoText: plant.flowering,
+        french_name: plant.french_name,
+        latin_name: plant.latin_name,
+        height: plant.height,
+        flowering: plant.flowering,
+        color: plant.color,
+        nectar: plant.nectar,
+        pollen: plant.pollen,
+        photo: plant.photo,
         position: plant.position,
       };
       this.infoBoxOpen = true;
