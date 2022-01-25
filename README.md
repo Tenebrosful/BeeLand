@@ -11,13 +11,15 @@
 
 ## Configuration
 
-- [Fichiers d'environnement](./config/README.md)
+- [Fichiers d'environnement](./backend/config/README.md)
 
 ## Démarrage
 
 ### API
 
-Requière les fichiers `config/bdd.env` (si `config/api.env` n'existe pas, le port par défaut sera 3000) (voir la [configuration des fichiers d'environnement](./config/README.md))
+Requière les fichiers `backend/config/bdd.env` (si `backend/config/api.env` n'existe pas, le port par défaut sera 3000) (voir la [configuration des fichiers d'environnement](./backend/config/README.md))
+
+> Dans le dossier backend
 
 Installation des dépendences
 
