@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 h1,
@@ -22,43 +22,47 @@ input,
 textarea,
 label,
 select {
-    font-family: cursive;
+  font-family: cursive;
 }
 
 footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
 }
 
 .btn {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
 .backButton {
-    width: 4rem;
-    height: 4rem;
-    color: black;
-    text-decoration: none;
-    border: 1px solid gray;
-    border-radius: .5rem;
-    margin-top: .25rem;
-    margin-left: .25rem;
+  width: 4rem;
+  height: 4rem;
+  color: black;
+  text-decoration: none;
+  border: 1px solid gray;
+  border-radius: .5rem;
+  margin-top: .25rem;
+  margin-left: .25rem;
 }
 
-.texte{
+.texte {
   padding: 2%;
   font-size: auto;
   font-family: cursive;
 }
 
-#score{
+#score {
   width: 100%;
   position: absolute;
   top: 12%;
 }
 
-td{
+td {
   vertical-align: middle;
+}
+
+.vue-map-container {
+  height: 100vh;
 }

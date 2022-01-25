@@ -11,7 +11,10 @@
       <GMapMarker
         :key="index"
         v-for="(plant, index) in plants"
-        :position="{ lat: parseFloat(plant.position.lat), lng: parseFloat(plant.position.lng) }"
+        :position="{
+          lat: parseFloat(plant.position.lat),
+          lng: parseFloat(plant.position.lng),
+        }"
         :clickable="true"
         @click="openInfoWindow(plant)"
       />
@@ -24,11 +27,22 @@
         :opened="infoBoxOpen"
         @closeclick="infoBoxOpen = false"
       >
-        <div class="infoWindow">
-          <h2 id="infoWindow-location">
-            {{ selectedLocation.name }}
-          </h2>
-          <p>{{ selectedLocation.infoText }}</p>
+        <div class="justify-content-center align-items-center">
+          <div v-if="!showQR" class="w-100">
+            <h3 id="infoWindow-location">Nom : {{ selectedLocation.name }}</h3>
+            <p>{{ selectedLocation.infoText }}</p>
+          </div>
+
+          <div v-else class="w-100">
+            <img :src="qrCodeUrl + selectedLocation.name" alt="QR CODE" />
+          </div>
+
+          <button
+            class="btn btn-secondary rounded w-100"
+            @click="showQR = !showQR"
+          >
+            {{ showQR ? "Afficher le texte" : "Afficher le QR Code" }}
+          </button>
         </div>
       </GMapInfoWindow>
     </GMapMap>
@@ -49,6 +63,8 @@ export default {
       center: { lat: 48.661039, lng: 6.15502 },
       selectedLocation: null,
       infoBoxOpen: false,
+      qrCodeUrl: "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=",
+      showQR: false,
     };
   },
   methods: {
@@ -63,9 +79,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.vue-map-container {
-  height: 95vh;
-}
-</style>
