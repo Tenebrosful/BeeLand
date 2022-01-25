@@ -2,14 +2,13 @@ import express from "express";
 import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import { initBDD } from "../database/database.js";
+import cors from "cors";
 
 /**
  * Setup des variables d'environnement
  */
 
 dotenv.config({path: "config/api.env"});
-
-initBDD();
 
 const app = express();
 
@@ -23,6 +22,7 @@ app.use(logger);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 /**
  * Routes
