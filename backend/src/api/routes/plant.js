@@ -2,7 +2,7 @@ import express from "express";
 import { DatabaseError } from "sequelize";
 import { getBDD } from "../../database/database.js";
 import { Plant } from "../../database/models/Plant.js";
-import error501 from "../errors/error501.js";
+import error405 from "../errors/error405.js";
 import mustBeAdmin from "../middleware/mustBeAdmin.js";
 const plant = express.Router();
 
@@ -57,6 +57,8 @@ plant.post("/", async (req, res, next) => {
     next(error);
   }
 });
+
+plant.use("/", error405);
 
 /**
  * OPTIONS for /:id
@@ -170,5 +172,7 @@ plant.patch("/:id", async (req, res, next) => {
     next(error);
   }
 });
+
+plant.use("/:id", error405);
 
 export default plant;
