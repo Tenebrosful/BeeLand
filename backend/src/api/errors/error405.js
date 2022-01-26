@@ -1,9 +1,9 @@
-import { Request, Response } from "express";
+import express from "express";
 
 /**
  * Error 405 "Method Not Allowed"
- * @param {Request} req
- * @param {Response} res
+ * @param {express.Request} req 
+ * @param {express.Response} res 
  */
 export default function error405(req, res) {
   res.status(405).json({
