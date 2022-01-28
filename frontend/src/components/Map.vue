@@ -41,6 +41,7 @@
               :src="selectedLocation.photo"
               :alt="selectedLocation.name"
               style="max-width: 100%"
+              class="mb-2"
             />
             <h6>Hauteur : {{ selectedLocation.height }}</h6>
             <h6>Floraison : {{ selectedLocation.flowering }}</h6>
@@ -50,11 +51,25 @@
           </div>
 
           <div v-else class="w-100">
-            <img :src="qrCodeUrl + selectedLocation.photo" alt="QR CODE" />
+            <div v-if="!isLoaded" class="lds-roller">
+              <div />
+              <div />
+              <div />
+              <div />
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+            <img
+              :src="qrCodeUrl + selectedLocation.photo"
+              alt="QR CODE"
+              @load="isLoaded = true"
+            />
           </div>
 
           <button
-            class="btn btn-secondary rounded w-100"
+            class="btn btn-secondary rounded w-100 mt-2"
             @click="showQR = !showQR"
           >
             {{ showQR ? "Afficher le texte" : "Afficher le QR Code" }}
@@ -81,6 +96,7 @@ export default {
       infoBoxOpen: false,
       qrCodeUrl: "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=",
       showQR: false,
+      isLoaded: false,
     };
   },
   methods: {
