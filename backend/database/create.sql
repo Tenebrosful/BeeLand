@@ -16,5 +16,6 @@ CREATE TABLE plants (
     flowering VARCHAR(80) NOT NULL,
     color VARCHAR(50) NOT NULL,
     location VARCHAR(80) NOT NULL,
-    photo VARCHAR(80) NOT NULL
+    photo VARCHAR(255) NOT NULL,
+    coordinates VARCHAR(80) NOT NULL
 );

@@ -13,15 +13,7 @@ dotenv.config({path: "config/bdd.env"});
 let BDDInstance;
 
 export function initBDD(){
-  const instance = new Sequelize(
-    process.env.BDD_DATABASE || "",
-    process.env.BDD_USERNAME || "",
-    process.env.BDD_PASSWORD || "",
-    {
-      dialect: process.env.BDD_DRIVER || "mariadb",
-      host: process.env.BDD_HOSTNAME || ""
-    }
-  );
+  const instance = new Sequelize('mysql://root@localhost:3306/beeland');
   
   try {
     instance.authenticate();

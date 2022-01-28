@@ -19,7 +19,8 @@
         @click="openInfoWindow(plant)"
       />
       <GMapInfoWindow
-        v-if="selectedLocation !== null"
+        v-for="(plant, index) in plants"
+        :key="index"
         :position="{
           lat: selectedLocation.position.lat,
           lng: selectedLocation.position.lng,
@@ -35,7 +36,11 @@
             <h6>
               Nom latin : <i>{{ selectedLocation.latin_name }}</i>
             </h6>
-            <img :src="selectedLocation.photo" alt="" />
+            <img
+              :src="selectedLocation.photo"
+              :alt="selectedLocation.name"
+              style="max-width: 100%"
+            />
             <h6>Hauteur : {{ selectedLocation.height }}</h6>
             <h6>Floraison : {{ selectedLocation.flowering }}</h6>
             <h6>Couleur : {{ selectedLocation.color }}</h6>

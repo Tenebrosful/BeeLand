@@ -16,8 +16,9 @@ export const Plant = sequelize.define("plants", {
   latin_name: DataTypes.STRING(50),
   location: DataTypes.STRING(80),
   nectar: DataTypes.INTEGER,
-  photo: DataTypes.STRING(80),
-  pollen: DataTypes.INTEGER
+  photo: DataTypes.STRING(255),
+  pollen: DataTypes.INTEGER,
+  coordinates: DataTypes.STRING(80),
 }, {
   timestamps: false
 })
