@@ -55,12 +55,14 @@ export default {
   },
   methods: {
     async getPlants() {
-      let { data } = await this.axios.get(process.env.VUE_APP_SERVER_URL + "/plant");
+      let { data } = await this.axios.get(
+        process.env.VUE_APP_SERVER_URL + "/plant"
+      );
       let newData = [];
       data.forEach((element) => {
         newData.push({
           ...element,
-          position: JSON.parse(element.coordinates)
+          position: JSON.parse(element.coordinates),
         });
       });
       this.plants = newData;

@@ -7,10 +7,11 @@
         mapTypeControl: false,
       }"
       ref="map"
+      @click="infoBoxOpen = false"
     >
       <GMapMarker
-        :key="index"
         v-for="(plant, index) in plants"
+        :key="index"
         :position="{
           lat: parseFloat(plant.position.lat),
           lng: parseFloat(plant.position.lng),
@@ -19,13 +20,13 @@
         @click="openInfoWindow(plant)"
       />
       <GMapInfoWindow
-        v-for="(plant, index) in plants"
-        :key="index"
+        v-if="selectedLocation !== null"
         :position="{
           lat: selectedLocation.position.lat,
           lng: selectedLocation.position.lng,
         }"
         :opened="infoBoxOpen"
+        :closeclick="true"
         @closeclick="infoBoxOpen = false"
       >
         <div class="justify-content-center align-items-center p-2">
